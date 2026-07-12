@@ -1,3 +1,7 @@
+output "data_protection_backup_instance_postgresqls_id" {
+  description = "Map of id values across all data_protection_backup_instance_postgresqls, keyed the same as var.data_protection_backup_instance_postgresqls"
+  value       = { for k, v in azurerm_data_protection_backup_instance_postgresql.data_protection_backup_instance_postgresqls : k => v.id }
+}
 output "data_protection_backup_instance_postgresqls_backup_policy_id" {
   description = "Map of backup_policy_id values across all data_protection_backup_instance_postgresqls, keyed the same as var.data_protection_backup_instance_postgresqls"
   value       = { for k, v in azurerm_data_protection_backup_instance_postgresql.data_protection_backup_instance_postgresqls : k => v.backup_policy_id }
